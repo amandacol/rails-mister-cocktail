@@ -6,10 +6,11 @@
   <div class="form-inputs">
   <%- attributes.each do |attribute| -%>
     <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+    <%= f.input :photo, as: :file %>
   <%- end -%>
   </div>
 
   <div class="form-actions">
-    <%%= f.button :submit %>
+    <%%= f.button :submit, "Crie sua receita" %>
   </div>
 <%% end %>
